@@ -1,6 +1,7 @@
 #include <windows.h>	//	Needed for Windows Applications.
 #include <tchar.h>
 #include <vld.h>
+#include "Game.h"
 
 #include <dbghelp.h>	//	Used for Dump File
 #pragma comment(lib, "dbghelp.lib")
@@ -252,7 +253,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	//////////////////////////////////////////
 	//	Initialize Game here
 	//////////////////////////////////////////									 
-
+	Game* pGame=Game::GetInstance();
 	//////////////////////////////////////////
 
 	//	Enter main event loop
@@ -274,7 +275,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		//////////////////////////////////
 		//	Put Game Logic Here
 		//////////////////////////////////
-
+		if(pGame->Main()==false)
+			PostQuitMessage(0);
 		
 		//////////////////////////////////
 	}
@@ -282,7 +284,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	/////////////////////////////////////////
 	//	Shutdown Game Here
 	/////////////////////////////////////////
-	
+	pGame->DeleteInstance();
 
 	/////////////////////////////////////////
 	

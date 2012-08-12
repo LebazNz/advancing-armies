@@ -15,6 +15,7 @@ public:
 	static void DeleteInstance(void);
 
 	void Initialize(HWND hWnd);
+	void Shutdown(void);
 
 private:
 	Direct3D(void);
@@ -27,6 +28,8 @@ private:
 	LPDIRECT3D9 pObject;
 	LPDIRECT3DDEVICE9 pDevice;
 	LPD3DXSPRITE pSprite;
+	LPD3DXLINE	pLine;
+	LPD3DXFONT	pFont;
 	D3DPRESENT_PARAMETERS D3DParams;
 
 };

@@ -29,6 +29,28 @@ void Direct3D::Initialize(HWND hWnd)
 
 	pObject->CreateDevice(0, D3DDEVTYPE_HAL, D3DParams.hDeviceWindow, D3DCREATE_HARDWARE_VERTEXPROCESSING, &D3DParams, &pDevice);
 	D3DXCreateSprite(pDevice, &pSprite);
+	D3DXCreateLine(pDevice, &pLine);
+	//D3DXCreateFont(
+}
+
+void Direct3D::Shutdown(void)
+{
+	if(pLine!=nullptr)
+	{
+		pLine->Release();
+	}
+	if(pSprite!=nullptr)
+	{
+		pSprite->Release();
+	}
+	if(pDevice!=nullptr)
+	{
+		pDevice->Release();
+	}
+	if(pObject!=nullptr)
+	{
+		pObject->Release();
+	}
 }
 
 Direct3D::Direct3D(void)

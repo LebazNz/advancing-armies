@@ -285,6 +285,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	/////////////////////////////////////////
 	//	Shutdown Game Here
 	/////////////////////////////////////////
+	pGame->Shutdown();
 	pGame->DeleteInstance();
 
 	/////////////////////////////////////////

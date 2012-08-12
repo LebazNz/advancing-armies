@@ -3,6 +3,8 @@
 
 #include <Windows.h>
 
+class Direct3D;
+
 class Game
 {
 public:
@@ -15,6 +17,8 @@ public:
 	static Game* GetInstance(void);
 	static void DeleteInstance(void);
 
+	void Initialize(HWND hWnd, HINSTANCE hInstance, int nScreenWidth, int ScreenHeight, bool bWindowed);
+
 private:
 	Game(void);
 	~Game(void);
@@ -23,5 +27,6 @@ private:
 
 	static Game* pInstance;
 	DWORD Time;
+	Direct3D* pD3D;
 };
 #endif

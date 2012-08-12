@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "Direct3D.h"
 
 Game* Game::pInstance=nullptr;
 
@@ -16,6 +17,15 @@ void Game::DeleteInstance(void)
 	{
 		delete pInstance;
 	}
+}
+
+void Game::Initialize(HWND hWnd, HINSTANCE hInstance, int nScreenWidth, int ScreenHeight, bool bWindowed)
+{
+	pD3D=Direct3D::GetInstance();
+
+
+
+	pD3D->Initialize(hWnd);
 }
 
 bool Game::Main()
@@ -48,6 +58,8 @@ bool Game::Input(void)
 Game::Game(void)
 {
 	Time=0;
+	//pD3D=Direct3D::GetInstance();
+	//pD3D->Initialize();
 }
 
 Game::~Game(void)

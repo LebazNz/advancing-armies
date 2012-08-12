@@ -254,6 +254,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	//	Initialize Game here
 	//////////////////////////////////////////									 
 	Game* pGame=Game::GetInstance();
+	pGame->Initialize(hWnd, hInstance, 800, 600, true);
 	//////////////////////////////////////////
 
 	//	Enter main event loop

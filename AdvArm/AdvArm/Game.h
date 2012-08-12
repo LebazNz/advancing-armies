@@ -18,6 +18,7 @@ public:
 	static void DeleteInstance(void);
 
 	void Initialize(HWND hWnd, HINSTANCE hInstance, int nScreenWidth, int ScreenHeight, bool bWindowed);
+	void Shutdown(void);
 
 private:
 	Game(void);

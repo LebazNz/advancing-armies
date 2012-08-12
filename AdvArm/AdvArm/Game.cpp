@@ -27,6 +27,11 @@ void Game::Initialize(HWND hWnd, HINSTANCE hInstance, int nScreenWidth, int Scre
 
 	pD3D->Initialize(hWnd);
 }
+void Game::Shutdown(void)
+{
+	pD3D->Shutdown();
+	pD3D->DeleteInstance();
+}
 
 bool Game::Main()
 {
@@ -58,8 +63,6 @@ bool Game::Input(void)
 Game::Game(void)
 {
 	Time=0;
-	//pD3D=Direct3D::GetInstance();
-	//pD3D->Initialize();
 }
 
 Game::~Game(void)

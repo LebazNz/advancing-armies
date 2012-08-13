@@ -16,6 +16,15 @@ public:
 
 	void Initialize(HWND hWnd);
 	void Shutdown(void);
+	void DrawRectangle(int PosX, int PosY, int length, char red, char green, char blue);
+	void DrawLine(int StartX, int StartY, int EndX, int EndY, char red, char green, char blue);
+
+	LPDIRECT3DDEVICE9 GetDevice(void) {return pDevice;}
+	void BeginDevice();
+	void EndDevice();
+	void Present();
+	void Clear(char red, char green, char blue);
+
 
 private:
 	Direct3D(void);
@@ -31,6 +40,5 @@ private:
 	LPD3DXLINE	pLine;
 	LPD3DXFONT	pFont;
 	D3DPRESENT_PARAMETERS D3DParams;
-
 };
 #endif DIRECT_3D

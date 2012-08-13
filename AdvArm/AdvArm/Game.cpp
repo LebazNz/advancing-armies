@@ -50,6 +50,16 @@ void Game::Update(void)
 
 void Game::Render(void)
 {
+	pD3D->Clear(128, 0, 37);
+	pD3D->BeginDevice();
+
+	pD3D->DrawRectangle( 128,  57,  128,  35,  200,  100);
+	pD3D->DrawRectangle( 500, 300, 128, 35, 200, 100);
+	pD3D->DrawLine(15,15,75,75,35,200,200);
+
+	pD3D->EndDevice();
+
+	pD3D->Present();
 }
 
 bool Game::Input(void)

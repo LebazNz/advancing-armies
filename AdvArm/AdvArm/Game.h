@@ -19,6 +19,7 @@ public:
 
 	void Initialize(HWND hWnd, HINSTANCE hInstance, int nScreenWidth, int ScreenHeight, bool bWindowed);
 	void Shutdown(void);
+	void DrawRectangle(void);
 
 private:
 	Game(void);

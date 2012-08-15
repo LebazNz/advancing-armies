@@ -6,7 +6,7 @@ Direct3D* Direct3D::GetInstance(void)
 {
 	if(pInstance==nullptr)
 		pInstance=new Direct3D();
-	return pInstance;
+	return pInstance;                              
 }
 
 void Direct3D::DeleteInstance(void)
